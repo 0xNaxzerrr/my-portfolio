@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import {
@@ -13,9 +13,10 @@ import {
 } from "@/components/ui/form";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
-
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import emailjs from "@emailjs/browser";
+import { useToast } from "@/components/ui/use-toast";
 
 const formSchema = z.object({
   email: z
@@ -25,6 +26,7 @@ const formSchema = z.object({
 });
 
 function ContactMe() {
+  const { toast } = useToast();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -32,11 +34,34 @@ function ContactMe() {
       message: "",
     },
   });
+  const formRef = useRef<HTMLFormElement>(null);
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+    if (formRef.current) {
+      emailjs
+        .sendForm(
+          process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_ID,
+          process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE_ID,
+          formRef.current,
+          process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY
+        )
+        .then(
+          () => {
+            toast({
+              description: "Your message has been sent.",
+            });
+            console.log("Email sent successfully!");
+          },
+          (error) => {
+            toast({
+              variant: "destructive",
+              title: "Uh oh! Something went wrong.",
+              description: "There was a problem with your request.",
+            });
+            console.log("Error sending email:", error);
+          }
+        );
+    }
   }
 
   function handleReset() {
@@ -47,7 +72,11 @@ function ContactMe() {
     <div className="px-12 rounded-2xl ">
       <h1 className="text-2xl pb-12 text-center">Contact me</h1>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="space-y-8"
+          ref={formRef}
+        >
           <FormField
             control={form.control}
             name="email"
@@ -58,7 +87,7 @@ function ContactMe() {
                   <Input placeholder="Your email here..." {...field} />
                 </FormControl>
                 <FormDescription>
-                  We'll never share your email with anyone else.
+                  We&apos;ll never share your email with anyone else.
                 </FormDescription>
                 <FormMessage />
               </FormItem>

@@ -38,7 +38,7 @@ function Navbar({ setContent }: NavbarProps) {
           className="text-muted-foreground transition-colors hover:text-foreground"
         >
           <Hammer className="mr-2 h-6 w-6" />
-          What i've built
+          What i&apos;ve built
         </Button>
         <Button
           onClick={() => setContent("skills")}
@@ -71,7 +71,7 @@ function Navbar({ setContent }: NavbarProps) {
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => setContent("projects")}>
               <Hammer className="mr-2 h-4 w-4" />
-              What i've built
+              What i&apos;ve built
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => setContent("skills")}>
               <MessageCircle className="mr-2 h-4 w-4" />
