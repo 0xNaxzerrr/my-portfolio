@@ -17,31 +17,28 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-interface NavbarProps {
-  setContent: (content: string) => void;
-}
-function Navbar({ setContent }: NavbarProps) {
+function Navbar() {
   const { setTheme } = useTheme();
+
+  const handleAnchorClick = (anchor: string) => {
+    const element = document.getElementById(anchor);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header className="rounded z-50 backdrop-blur-lg dark:bg-slate-900/20 bg-slate-50 justify-between sticky top-0 flex h-16 items-center gap-4 border-b px-4 md:px-6">
       <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
         <Button
-          onClick={() => setContent("aboutme")}
+          onClick={() => handleAnchorClick("aboutme")}
           variant="link"
           className="text-muted-foreground transition-colors hover:text-foreground"
         >
           <MessageCircle className="mr-2 h-6 w-6" /> Know me
         </Button>
         <Button
-          onClick={() => setContent("projects")}
-          variant="link"
-          className="text-muted-foreground transition-colors hover:text-foreground"
-        >
-          <Hammer className="mr-2 h-6 w-6" />
-          What i&apos;ve built
-        </Button>
-        <Button
-          onClick={() => setContent("skills")}
+          onClick={() => handleAnchorClick("skills")}
           variant="link"
           className="text-muted-foreground transition-colors hover:text-foreground"
         >
@@ -49,7 +46,15 @@ function Navbar({ setContent }: NavbarProps) {
           Skills
         </Button>
         <Button
-          onClick={() => setContent("contact")}
+          onClick={() => handleAnchorClick("projects")}
+          variant="link"
+          className="text-muted-foreground transition-colors hover:text-foreground"
+        >
+          <Hammer className="mr-2 h-6 w-6" />
+          Projects
+        </Button>
+        <Button
+          onClick={() => handleAnchorClick("contact")}
           variant="link"
           className="text-muted-foreground transition-colors hover:text-foreground"
         >
@@ -65,19 +70,19 @@ function Navbar({ setContent }: NavbarProps) {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="start">
-            <DropdownMenuItem onClick={() => setContent("aboutme")}>
+            <DropdownMenuItem onClick={() => handleAnchorClick("aboutme")}>
               <MessageCircle className="mr-2 h-4 w-4" />
               Know me
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setContent("projects")}>
+            <DropdownMenuItem onClick={() => handleAnchorClick("projects")}>
               <Hammer className="mr-2 h-4 w-4" />
               What i&apos;ve built
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setContent("skills")}>
-              <MessageCircle className="mr-2 h-4 w-4" />
+            <DropdownMenuItem onClick={() => handleAnchorClick("skills")}>
+              <Brain className="mr-2 h-4 w-4" />
               Skills
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setContent("contact")}>
+            <DropdownMenuItem onClick={() => handleAnchorClick("contact")}>
               <MailOpen className="mr-2 h-4 w-4" />
               Hire me
             </DropdownMenuItem>
