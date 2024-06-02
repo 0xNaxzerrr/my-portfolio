@@ -37,30 +37,38 @@ function ContactMe() {
   const formRef = useRef<HTMLFormElement>(null);
 
   function onSubmit(values: z.infer<typeof formSchema>) {
+    const serviceId = process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      toast({
+        variant: "destructive",
+        title: "Configuration Error",
+        description:
+          "EmailJS environment variables are not properly configured.",
+      });
+      console.error("EmailJS environment variables are missing.");
+      return;
+    }
+
     if (formRef.current) {
-      emailjs
-        .sendForm(
-          process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_ID,
-          process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE_ID,
-          formRef.current,
-          process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY
-        )
-        .then(
-          () => {
-            toast({
-              description: "Your message has been sent.",
-            });
-            console.log("Email sent successfully!");
-          },
-          (error) => {
-            toast({
-              variant: "destructive",
-              title: "Uh oh! Something went wrong.",
-              description: "There was a problem with your request.",
-            });
-            console.log("Error sending email:", error);
-          }
-        );
+      emailjs.sendForm(serviceId, templateId, formRef.current, publicKey).then(
+        () => {
+          toast({
+            description: "Your message has been sent.",
+          });
+          console.log("Email sent successfully!");
+        },
+        (error) => {
+          toast({
+            variant: "destructive",
+            title: "Uh oh! Something went wrong.",
+            description: "There was a problem with your request.",
+          });
+          console.log("Error sending email:", error);
+        }
+      );
     }
   }
 

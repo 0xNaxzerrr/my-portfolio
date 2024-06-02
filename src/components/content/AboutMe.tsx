@@ -21,7 +21,7 @@ export default function AboutMe() {
         </span>
 
         <span className="col-span-2">
-          <h1 className="text-4xl font-bold mb-4">GM, it's Nax 👋</h1>
+          <h1 className="text-4xl font-bold mb-4">GM, it&apos;s Nax 👋</h1>
           <p className="text-md">
             I am a fullstack developer with a passion for building web
             applications. I have experience with React, Next.js, Node.js, and

@@ -2,7 +2,7 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import smartbet from "@/app/assets/smartbet.png";
-import spotifyWeb3 from "@/app/assets/spotifyWeb3.png";
+import spotifyWeb3 from "@/app/assets/spotifyweb3.png";
 import boilerplateApi from "@/app/assets/boilerplateApi.png";
 import { useToast } from "@/components/ui/use-toast";
 import { Badge } from "@/components/ui/badge";
