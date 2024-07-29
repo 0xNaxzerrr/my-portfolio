@@ -247,6 +247,7 @@ export const DATA = {
         },
       ],
       image: "/thxbro.gif",
+      video: "",
     },
     {
       title: "SpotifyWeb3",
