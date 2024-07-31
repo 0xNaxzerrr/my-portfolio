@@ -80,7 +80,7 @@ export const DATA = {
       start: "Sept 2023",
       end: "Now",
       description:
-        "Developed a custom a custom API that enables users to manage their real estate assets, tracking buildings throughout their life cycle, both in the project phase (rehabilitation/construction) and in operation. Implemented websocket connections to the backend to enable real-time updates for the frontend.",
+        "Developed a custom API that enables users to manage their real estate assets, tracking buildings throughout their life cycle, both in the project phase (rehabilitation/construction) and in operation. Implemented websocket connections to the backend to enable real-time updates for the frontend.",
     },
     {
       company: "Sezame",
