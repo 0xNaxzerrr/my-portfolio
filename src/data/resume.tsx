@@ -1,5 +1,6 @@
 import { Icons } from "@/components/icons";
 import { CodeIcon, HomeIcon, Calendar } from "lucide-react";
+import { title } from "process";
 
 export const DATA = {
   name: "Lattana S.",
@@ -306,12 +307,30 @@ export const DATA = {
   ],
   events: [
     {
+      title: "Rust & Solana discovery day",
+      dates: "Sept 5th - 6th, 2024",
+      location: "Paris, France",
+      description:
+        "A two-day event to learn and build on the Solana blockchain with Rust programming language.",
+      logoUrl: "/42blockchain_logo.png",
+      links: [],
+    },
+    {
       title: "Solana Blinks Day",
       dates: "july 24th 2024",
       location: "Paris, France",
       description:
         "Blockchain + links = Blinks. A day of learning and building on the Solana blockchain.",
       logoUrl: "/superteamearn.png",
+      links: [],
+    },
+    {
+      title: "ESGI Blockchain Day",
+      dates: "June 27th, 2024",
+      location: "Paris, France",
+      logoUrl: "/esgi_logo.png",
+      description:
+        "Involvement of multiple blockchain players, including Forge by Société Générale, MetaDev3, and XRPL Commons on the theme of development and innovation in the blockchain ecosystem.",
       links: [],
     },
     {
