@@ -84,6 +84,18 @@ export const DATA = {
         "Developed a custom API that enables users to manage their real estate assets, tracking buildings throughout their life cycle, both in the project phase (rehabilitation/construction) and in operation. Implemented websocket connections to the backend to enable real-time updates for the frontend.",
     },
     {
+      company: "Kugle Corp",
+      href: "https://kugle.app/",
+      badges: ["Remote"],
+      location: "Remote",
+      title: "Software Engineer | Blockchain Enginner",
+      logoUrl: "/kuglecorp_logo.jpg",
+      start: "Nov 2024",
+      end: "Jan 2025",
+      description:
+        "Developed a Leaderboard API with TypeScript and Node.js. Integrated an On/Off Ramp Payment Solution with Thirdweb. Built a Smart Contract for Token Vesting in Solidity",
+    },
+    {
       company: "Sezame",
       badges: ["Paris"],
       href: "https://www.hellosezame.com/",
@@ -306,6 +318,15 @@ export const DATA = {
     },
   ],
   events: [
+    {
+      title: "Encode Rust x Solana BootCamp",
+      dates: "Q4 2024",
+      location: "Online",
+      description:
+        "A free, intensive, 6-week coding bootacamp to learn about Rust and building on Solana",
+      logoUrl: "/encodeclub.jpg",
+      links: [],
+    },
     {
       title: "Rust & Solana discovery day",
       dates: "Sept 5th - 6th, 2024",
