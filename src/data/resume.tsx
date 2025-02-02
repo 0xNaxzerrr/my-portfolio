@@ -11,24 +11,21 @@ export const DATA = {
   description:
     "Software Engineer turned Blockchain developer. I love building things and learning new things.",
   summary:
-    "During the COVID-19 pandemic, I quit my job as a personal driver to undertake a two-years web development program. This sparked my deep interest in blockchain technology and its ecosystem, prompting me to pursue a Master's degree in Blockchain Engineering. Throughout my journey, I have actively engaged in various blockchain-related events, such as hackathons and industry conferences, continually expanding my knowledge and skills.",
+    "Passionate about technological innovation and decentralization, I am a blockchain developer specialized in creating decentralized applications (dApps) and developing smart contracts. My expertise spans the entire Web3 ecosystem, from designing to implementing innovative blockchain solutions.",
   avatarUrl: "/me.png",
   skills: [
-    "React",
-    "Next.js",
-    "Typescript",
-    "Node.js",
     "Solidity",
-    "MongoDB",
-    "WAGMI",
-    "Web3.js",
-    "Ethers.js",
+    "Foundry",
     "Hardhat",
-    "Github",
-    "Docker",
-    "TailwindCSS",
-    "Prisma",
     "Rust",
+    "Solana",
+    "Git",
+    "Docker",
+    "Azure Devops",
+    "ReactJS",
+    "NextJS",
+    "NodeJS",
+    "TypeScript",
   ],
   navbar: [
     { href: "#hero", icon: HomeIcon, label: "Home" },
@@ -55,7 +52,7 @@ export const DATA = {
       },
       X: {
         name: "X",
-        url: "https://x.com/intent/follow?screen_name=S_lattana",
+        url: "https://x.com/intent/follow?screen_name=Naxzerrr",
         icon: Icons.x,
 
         navbar: true,
@@ -170,6 +167,14 @@ export const DATA = {
   ],
   education: [
     {
+      school: "Alyra x Solana Foundation",
+      href: "https://www.alyra.fr/",
+      degree: "Solana x Rust Bootcamp",
+      logoUrl: "/alyra.png",
+      start: "Feb 2025",
+      end: "Mar 2025",
+    },
+    {
       school: "ESGI",
       href: "https://www.esgi.fr/",
       degree: "Master's Degree of Blockchain Engineering",
@@ -211,6 +216,75 @@ export const DATA = {
     },
   ],
   projects: [
+    {
+      title: "MultiSigWallet",
+      href: "https://github.com/0xNaxzerrr/MultiSigWallet",
+      dates: "Dec 2024 - Jan 2025",
+      active: true,
+      description:
+        "MultiSig Wallet - Solidity smart contract with multi-signature management",
+      technologies: [
+        "Solidity",
+        "Foundry"
+      ],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/0xNaxzerrr/MultiSigWallet",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/multisigwallet.png",
+      video: "",
+    },
+    {
+      title: "GOLDLINK",
+      href: "https://github.com/0xNaxzerrr/GoldLink",
+      dates: "Dec 2024 - Jan 2025",
+      active: true,
+      description:
+        "GoldLink is a Web3 project combining a gold-backed ERC-20 token, a Chainlink VRF-powered lottery, and a cross-chain bridge for seamless transfers between Sepolia and BSC Testnet.",
+      technologies: [
+        "Solidity",
+        "Foundry",
+        "OpenZeppelin",
+        "Chainlink VRF / CCIP",
+      ],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/0xNaxzerrr/GoldLink",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/goldlink.png",
+      video: "",
+    },
+    {
+      title: "L3ARN",
+      href: "https://github.com/0xNaxzerrr/L3ARN",
+      dates: "Dec 2024 - Jan 2025",
+      active: true,
+      description:
+        "L3ARN is an innovative blockchain-based platform designed to revolutionize academic certification through decentralized, verifiable, and immutable digital certificates. By leveraging Avalanche subnet technology and smart contracts, L3ARN provides a secure and transparent solution for issuing, managing, and validating academic credentials.",
+      technologies: [
+        "avalanche",
+        "solidity",
+        "foundry",
+        "wagmi",
+        "next.js",
+        "tailwindcss",
+      ],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/0xNaxzerrr/L3ARN",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/L3ARN.png",
+      video: "",
+    },
     {
       title: "ESGI Dex",
       href: "",
@@ -318,15 +392,6 @@ export const DATA = {
     },
   ],
   events: [
-    {
-      title: "Encode Rust x Solana BootCamp",
-      dates: "Q4 2024",
-      location: "Online",
-      description:
-        "A free, intensive, 6-week coding bootacamp to learn about Rust and building on Solana",
-      logoUrl: "/encodeclub.jpg",
-      links: [],
-    },
     {
       title: "Rust & Solana discovery day",
       dates: "Sept 5th - 6th, 2024",
